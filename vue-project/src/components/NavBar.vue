@@ -32,7 +32,7 @@ let isVisible = ref(false);
   <HamburgerMenu />
   </div>
 </nav>
-  <ToggleMenu :isVisible="isVisible" />
+  <ToggleMenu :isVisible="isVisible" :links="links" />
 </template>
 
 <style scoped>

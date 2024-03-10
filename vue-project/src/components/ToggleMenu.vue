@@ -3,6 +3,11 @@ const props = defineProps({
   isVisible: {
     type: Boolean,
     required: true
+  },
+
+  links: {
+    type: Array,
+    required: true
   }
 })
 
@@ -11,12 +16,7 @@ const props = defineProps({
 <template>
     <div v-show="props.isVisible" class="toggle-menu">
       <ul class="toggle-items">
-      <li><a href="#">Our Story</a></li>
-      <li><a href="#">Games</a></li>
-      <li><a href="#">Web Games</a></li>
-      <li><a href="#">Careers</a></li>
-      <li><a href="#">Support</a></li>
-      <li><a href="#">My Account</a></li>
+      <li v-for="({title,href},i) in links" :key="i"><a :href="href">{{ title }}</a></li>
       </ul>
     </div>
 </template>
